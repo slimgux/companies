@@ -13,5 +13,5 @@ public class PriceResponse {
     private Integer productId;
     private Integer brandId;
     private Double price;
-    private Integer rate;
+    private Integer priceList;
 }
