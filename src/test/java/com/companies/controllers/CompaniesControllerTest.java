@@ -40,7 +40,7 @@ class CompaniesControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"priceDate\": \"2021-06-14T10:00:00.000Z\",\"productId\": 35455,\"brandId\": 1}"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.price", Is.is(10.5)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.price", Is.is(0.0)));
     }
 
     @Test
@@ -49,7 +49,7 @@ class CompaniesControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"priceDate\": \"2021-06-14T16:00:00.000Z\",\"productId\": 35455,\"brandId\": 1}"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.price", Is.is(0)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.price", Is.is(0.0)));
     }
 
     @Test
@@ -58,7 +58,7 @@ class CompaniesControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"priceDate\": \"2021-06-14T21:00:00.000Z\",\"productId\": 35455,\"brandId\": 1}"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.price", Is.is(0)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.price", Is.is(0.0)));
     }
 
     @Test
@@ -67,7 +67,7 @@ class CompaniesControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"priceDate\": \"2021-06-15T10:00:00.000Z\",\"productId\": 35455,\"brandId\": 1}"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.price", Is.is(0)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.price", Is.is(0.0)));
     }
 
     @Test
@@ -76,6 +76,6 @@ class CompaniesControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"priceDate\": \"2021-06-16T21:00:00.000Z\",\"productId\": 35455,\"brandId\": 1}"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.price", Is.is(0)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.price", Is.is(0.0)));
     }
 }
