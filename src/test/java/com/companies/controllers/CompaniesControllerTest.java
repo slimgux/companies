@@ -35,6 +35,14 @@ class CompaniesControllerTest {
     }
 
     @Test
+    void whenPostRequestToNotFoundPriceAndValidRequest_thenInCorrectResponse404() throws Exception {
+        mockMvc.perform(post("/api/v1/price")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"priceDate\": \"2020-06-14T04:35:54.724Z\",\"productId\": 35455,\"brandId\": 2}"))
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
+    }
+
+    @Test
     void whenPostRequestToPriceAndValidRequestAndTest1_thenCorrectResponse() throws Exception {
         mockMvc.perform(post("/api/v1/price")
                         .contentType(MediaType.APPLICATION_JSON)
