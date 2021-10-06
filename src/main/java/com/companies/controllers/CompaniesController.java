@@ -22,7 +22,6 @@ public class CompaniesController {
     @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Success")})
     @PostMapping(value = "/price", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<PriceResponse> getPrice(@Valid @RequestBody PriceRequest priceRequest) {
-
-        return ResponseEntity.ok(PriceResponse.builder().price(10.5).build());
+        return ResponseEntity.ok(PriceResponse.builder().price(0.0).build());
     }
 }
