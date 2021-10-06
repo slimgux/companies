@@ -1,5 +1,6 @@
 package com.companies.controllers;
 import com.companies.requests.PriceRequest;
+import com.companies.responses.PriceResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -17,11 +18,9 @@ public class CompaniesController {
 
     @Operation(summary = "Get price")
     @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Success") })
-    @GetMapping("")
-    public ResponseEntity<String> existeUsuario(@RequestBody(required = true) PriceRequest priceRequest) {
-        if (Objects.nonNull(priceRequest)) {
+    @GetMapping("price")
+    public ResponseEntity<PriceResponse> existeUsuario(@RequestBody(required = true) PriceRequest priceRequest) {
 
-        }
-        return ResponseEntity.ok("KO");
+        return ResponseEntity.ok(PriceResponse.builder().build());
     }
 }

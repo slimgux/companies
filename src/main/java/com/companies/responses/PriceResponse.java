@@ -1,10 +1,10 @@
 package com.companies.responses;
 
-import lombok.Data;
+import lombok.Builder;
 
 import java.time.LocalDateTime;
 
-@Data
+@Builder
 public class PriceResponse {
     private LocalDateTime startPriceDate;
     private LocalDateTime endPriceDate;
