@@ -7,10 +7,10 @@ import java.time.LocalDateTime;
 
 @Data
 public class PriceRequest {
-    @NotNull
+    @NotNull(message = "priceDate is mandatory")
     private LocalDateTime priceDate;
-    @NotNull
+    @NotNull(message = "productId is mandatory")
     private Integer productId;
-    @NotNull
+    @NotNull(message = "brandId is mandatory")
     private Integer brandId;
 }
